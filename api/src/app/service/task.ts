@@ -10,7 +10,7 @@ const update = async (id: number, payload: Partial<Task>) => {
 
   if (!taskToUpdate) throw ERRORS.TASK.NOT_FOUND;
   const task = taskToUpdate.get();
-  console.log(task, payload);
+
   await Task.update({ ...payload }, { where: { id } });
   return { ...task, ...payload };
 };

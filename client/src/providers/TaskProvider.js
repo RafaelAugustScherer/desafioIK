@@ -10,15 +10,12 @@ const TaskProvider = ({ children }) => {
   const [providerError, setProviderError] = useState(undefined);
   
   const fetchTasks = async () => {
-    console.log(tasks);
-    console.log(process.env.REACT_APP_SERVER);
     const response = await axios.get(`${REACT_APP_SERVER}/task`)
       .then((res) => res.data)
       .catch((err) => {
         console.log(err);
         setProviderError('Failed to retrieve tasks from server');
       });
-    console.log(response);
     setTasks(response);
   };
 
