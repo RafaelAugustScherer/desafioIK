@@ -26,7 +26,7 @@ const Tasks = () => {
           </thead>
           <tbody>
             {
-              tasks ? (
+              tasks.length ? (
                 tasks.map((task, idx) => (
                   <tr key={`${task.taskName}-${idx}`}>
                     <td>{task.taskName}</td>
