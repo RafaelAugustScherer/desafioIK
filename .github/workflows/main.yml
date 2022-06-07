@@ -19,8 +19,8 @@ jobs:
           appdir: client
           usedocker: true
           stack: container
-        docker_build_args: |
-          HD_REACT_APP_SERVER
+          docker_build_args: |
+            HD_REACT_APP_SERVER
         env:
           HD_REACT_APP_SERVER: "https://desafio-ik-api.herokuapp.com"
       - name: Build and Deploy Back-end
