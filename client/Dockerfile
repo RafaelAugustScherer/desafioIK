@@ -2,7 +2,9 @@ FROM node:17-alpine AS build
 WORKDIR /app
 COPY . .
 
+ARG REACT_APP_SERVER
 ENV REACT_APP_SERVER=$REACT_APP_SERVER
+
 RUN npm install
 RUN npm run build
 
