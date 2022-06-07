@@ -1,0 +1,83 @@
+{
+	"info": {
+		"_postman_id": "d6210631-a9a3-4728-9ac4-b0dab9502e3d",
+		"name": "desafioIK",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11293941"
+	},
+	"item": [
+		{
+			"name": "Recuperar Tarefas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/task",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar Tarefa",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Rafael A. Scherer\",\r\n    \"taskName\": \"Entregar Desafio Técnico\",\r\n    \"resolutionDate\": \"2022-06-08\",\r\n    \"resolutionTime\": \"18:00\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/task",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"task"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar Tarefa",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"taskName\": \"Lavar Louça\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/task/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"task",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

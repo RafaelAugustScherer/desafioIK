@@ -1,0 +1,23 @@
+{
+  "name": "desafioik",
+  "version": "1.0.0",
+  "description": "O desafio consiste em uma aplicação Full-stack utilizando banco de dados relacional para armazenar, publicar e editar uma lista de tarefas.",
+  "main": "index.js",
+  "scripts": {
+    "install:front": "cd client && npm install",
+    "install:back": "cd api && npm install",
+    "install:apps": "npm run install:front && npm run install:back",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RafaelAugustScherer/desafioIK.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RafaelAugustScherer/desafioIK/issues"
+  },
+  "homepage": "https://github.com/RafaelAugustScherer/desafioIK#readme"
+}
