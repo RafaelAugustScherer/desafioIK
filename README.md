@@ -11,6 +11,8 @@ Deploy da aplicação é feito a partir do GitHub CI em forma de container para 
 
 O back-end está disponibilizado em um servidor Node.js a partir do tradicional `npm start`, enquanto o front-end está disponibilizado de forma estática através de um servidor NGINX.
 
+O banco de dados relacional PostgreSQL está 'hosteado' no [Supabase](https://app.supabase.com/)
+
 * Front-end disponível em https://desafio-ik.herokuapp.com/
 * Back-end disponível em https://desafio-ik-api.herokuapp.com/
 
