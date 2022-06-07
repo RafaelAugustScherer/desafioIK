@@ -1,0 +1,37 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build and Deploy Front-end
+        uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "desafio-ik"
+          heroku_email: "rafaelaugustscherer@gmail.com"
+          appdir: client
+          usedocker: true
+          stack: container
+        env:
+          HD_REACT_APP_SERVER: "https://desafio-ik-api.herokuapp.com"
+      - name: Build and Deploy Back-end
+        uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "desafio-ik-api"
+          heroku_email: "rafaelaugustscherer@gmail.com"
+          appdir: api
+          usedocker: true
+          stack: container
+        env:
+          HD_PS_USERNAME: ${{secrets.DB_USERNAME}}
+          HD_PS_PASSWORD: ${{secrets.DB_PASSWORD}}
+          HD_PS_DATABASE: 'postgres'
+          HD_PS_HOST: ${{secrets.DB_HOST}}
