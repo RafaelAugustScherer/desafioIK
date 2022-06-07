@@ -26,14 +26,18 @@ const Tasks = () => {
           </thead>
           <tbody>
             {
-              tasks.map((task, idx) => (
-                <tr key={`${task.taskName}-${idx}`}>
-                  <td>{task.taskName}</td>
-                  <td>{task.name}</td>
-                  <td>{getFormattedDate(task.resolutionDate)}</td>
-                  <td>{task.resolutionTime}</td>
-                </tr>
-              ))
+              tasks ? (
+                tasks.map((task, idx) => (
+                  <tr key={`${task.taskName}-${idx}`}>
+                    <td>{task.taskName}</td>
+                    <td>{task.name}</td>
+                    <td>{getFormattedDate(task.resolutionDate)}</td>
+                    <td>{task.resolutionTime}</td>
+                  </tr>
+                ))
+              ) : (
+                <p>Carregando Tarefas...</p>
+              )
             }
           </tbody>
         </table>
