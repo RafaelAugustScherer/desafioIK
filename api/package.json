@@ -2,7 +2,7 @@
   "name": "api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "build/server.js",
   "scripts": {
     "build": "npx -y tsc",
     "lint": "eslint",
@@ -10,7 +10,7 @@
     "db:create": "npx sequelize-cli db:create",
     "db:migrate": "npx sequelize-cli db:migrate",
     "db:seed": "npx sequelize-cli db:seed:all",
-    "db:restart": "npm run db:drop && npm run db:create && npm run db:migrate && npm run db:seed",
+    "db:restart": "npx sequelize-cli db:migrate:undo:all && npm run db:migrate && npm run db:seed",
     "predev": "npm run build && NODE_ENV=development npm run db:restart",
     "prestart": "npm run build",
     "start": "node .",
@@ -26,7 +26,8 @@
     "express": "^4.18.1",
     "express-async-errors": "^3.1.1",
     "joi": "^17.6.0",
-    "mysql2": "^2.3.3",
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
     "sequelize": "^6.20.1"
   },
   "devDependencies": {

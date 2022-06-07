@@ -1,20 +1,13 @@
 import 'dotenv/config';
 import { Options } from 'sequelize';
 
-const suffix = {
-  development: '-dev',
-  production: '',
-};
-
-const env = process.env.NODE_ENV as keyof typeof suffix || 'production';
-
 const config: Options = {
-  username: process.env.MYSQL_USERNAME,
-  password: process.env.MYSQL_PASSWORD,
-  database: `${process.env.MYSQL_DATABASE}${suffix[env]}`,
-  host: process.env.MYSQL_HOST || 'localhost',
-  port: Number(process.env.MYSQL_PORT) || 3306,
-  dialect: 'mysql',
+  username: process.env.PS_USERNAME,
+  password: process.env.PS_PASSWORD,
+  database: `${process.env.PS_DATABASE}`,
+  host: process.env.PS_HOST || 'localhost',
+  port: Number(process.env.PS_PORT) || 5432,
+  dialect: 'postgres',
   dialectOptions: {
     timezone: '-03:00',
   },
